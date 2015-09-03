@@ -1,0 +1,46 @@
+@(userForm: Form[User])
+
+@main("Login users") {
+
+    @helper.form(action = routes.Users.checkLogin()) {
+        <!-- custom css -->
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/login.css")">
+
+        <!-- custom js -->
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/login.js") "></script>
+
+
+        <div class="login" id="center">
+            <div>
+                <img id="image" src="@routes.Assets.versioned("images/logo.png")" />
+            </div>
+
+            <form action="" method="post">
+                <div>
+                    <div>
+                    <input name="email" type="email" id ="email"  placeholder = "Email" required>
+                    </div>
+
+                    <div>
+                    <input  name="password"  id = "password" type="password" placeholder = "Password" required>
+                    </div>
+
+                </div>
+
+                <div>
+                    <input type="submit" value="Login" onclick="checkEmail(email.value)" href="@routes.Users.checkLogin()" class="button">
+                </div>
+
+                <div>
+                    <a href="popupex.html" onclick="return popitup('@routes.Users.sendEmail()')" class="a"><em>
+                        Did you forget password ?</em></a>
+                </div>
+
+            </form>
+        </div>
+
+    }
+}
+
+
+

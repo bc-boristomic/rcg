@@ -1,0 +1,43 @@
+@(userForm: Form[User])
+
+@main("Register new user") {
+
+    @helper.form(action = routes.Users.saveUser()) {
+        <!-- custom css -->
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/login.css")">
+
+        <!-- custom js -->
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/login.js")"></script>
+
+        <div class="login" id="center">
+            <div>
+                <img id="image" src="@routes.Assets.versioned("images/logo.png")" />
+            </div>
+
+            <br>
+            <p><strong>Add new user to database</strong></p>
+
+            <form action="" method="post">
+                <div>
+                    <div>
+                    @helper.inputText(userForm("email"), 'id -> "email", 'placeholder -> "Email")
+                    </div>
+
+                    <div>
+                    @helper.inputPassword(userForm("password"), 'id -> "password", 'placeholder -> "Password")
+                    </div>
+
+                </div>
+
+                <div>
+                    <input type="submit" value="Add user" onclick="validateLogin(email, password)" href="@routes.Users.saveUser()" class="button">
+                </div>
+
+            </form>
+        </div>
+
+    }
+}
+
+
+

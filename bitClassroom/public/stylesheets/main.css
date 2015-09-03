@@ -1,0 +1,26 @@
+#header{
+ margin-bottom: -30px;
+}
+* {
+     margin: 0;
+ }
+html, body {
+    height: 100%;
+    background-image : url("../images/background.jpg");
+}
+.page-wrap {
+    min-height: 89%;
+    /* equal to footer height */
+    margin-top: 52px;
+    margin-bottom: -22px;
+
+}
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+.site-footer, .page-wrap:after {
+    height: 22px;
+    text-align:center;
+}
+
