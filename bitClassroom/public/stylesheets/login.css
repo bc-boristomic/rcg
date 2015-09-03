@@ -1,0 +1,83 @@
+#center{
+
+	border-radius: 10px;
+	width: 30%;
+	height: 40%;
+	margin: auto;
+}
+
+.button {
+  
+  font-size: 1em;
+  border-radius: 8px;
+  padding: 5px 25px 5px 25px;
+  margin: 15px; 
+  border: 1px solid #59B969;
+  box-shadow: 0 1px 0 0 #60BD49 inset;
+  background: #63E651;
+  background: -webkit-linear-gradient(#63E651, #42753E);
+  background: -moz-linear-gradient(#63E651, #42753E);
+  background: -o-linear-gradient(#63E651, #42753E);
+  background: linear-gradient(grey, #42753e);
+}
+
+div{
+  text-align: center;
+}
+.button:hover {
+  
+  background: #51DB1C;
+  background: -webkit-linear-gradient(#51DB1C, #6BA061);
+  background: -moz-linear-gradient(#51DB1C, #6BA061);
+  background: -o-linear-gradient(#51DB1C, #6BA061);
+  background: linear-gradient(#51db1c, #6ba061);
+}
+.login{
+ 
+  margin: 30px auto;
+  padding: 10px;
+  border: 7px solid #808080;
+  border-radius: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+  background-color: #F0F0F0;
+  box-shadow: 0 0 20px 0 #000000;
+}
+#image{
+  
+  padding-top: 10px;
+  border-radius: 50%;
+  width: 40%; 
+  height: 40%;
+ 
+}
+.login label {
+  display: inline-block;
+  width: 25%;
+  text-align: right;
+  margin: 5px;
+  color: black;
+  font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,Sans-Serif;
+  font-size: 0.9em;
+  border-radius: 5px;
+}
+#email{
+  height: 25px;
+  width: 50%;
+  margin-top: 5px;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+#password{
+  height: 25px;
+  width: 50%;
+  margin-top: 5px;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+.a {
+  font-size: 10px;
+  text-decoration: none;
+  color: #42753E;
+
+}
