@@ -1,0 +1,56 @@
+@(errorList: List[ErrorLog])
+
+@mainAdmin("Errors: "){
+
+
+    <script type="text/javascript" src="@routes.Assets.versioned("adminscript/jquery-1.11.1.js") "></script>
+
+    <script>
+        function del(urlToDel) {
+
+            $.ajax({
+
+                url: urlToDel,
+                type: 'DELETE',
+                success: function(results) {
+                    location.reload();
+                }
+            });
+        }
+    </script>
+
+
+
+    <div class="container">
+        <h4 class="page-head-line">Errors:</h4>
+
+    </div>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table-condensed table-hover table table-bordered">
+                <thead>
+                    <tr class="danger">
+                        <th>Id</th>
+                        <th>Error message</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                @for(err <- errorList) {
+                    <tr class="info">
+                        <td>@err.getId</td>
+                        <td>@err.getMessage</td>
+                        <td>@err.getDate</td>
+                        <td><a onclick="del('@routes.UserController.deleteError(err.getId)')"><i class="glyphicon glyphicon-trash"></i></a></td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+}
+

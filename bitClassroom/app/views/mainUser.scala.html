@@ -1,0 +1,118 @@
+@(title: String)(email:String)(content: Html)
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>@title</title>
+      <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="@routes.Assets.versioned("adminstyle/bootstrap.css")" rel="stylesheet" />
+
+    <link href="@routes.Assets.versioned("userstyle/bootstrap.css")" rel="stylesheet" />
+    <link href="@routes.Assets.versioned("userstyle/jasny-bootstrap.css")" rel="stylesheet" />
+    <link href="@routes.Assets.versioned("userstyle/style.css")" rel="stylesheet" />
+
+    <!-- css from bootstrap -->
+    <link rel="stylesheet" href="@routes.Assets.versioned("bootstrap/css/bootstrap.min.css")">
+
+      <!-- Custom font and icon -->
+    <link href="@routes.Assets.versioned("adminstyle/font-awesome.css")" rel="stylesheet"/>
+      <!-- CUSTOM STYLE  -->
+    <link href="@routes.Assets.versioned("adminstyle/style.css")" rel="stylesheet" />
+
+      <!-- custom icon -->
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/logo.png")">
+
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-1">
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <strong>Email: @email</strong><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Edit profile</a></li>
+                  <li><a href="@routes.UserController.signOut()">Sign out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+    </header>
+      <!-- HEADER END-->
+    <div class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"></a>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <section class="menu-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="navbar-collapse collapse ">
+              <ul id="menu-top" class="nav navbar-nav navbar-right">
+                <li><a href="@routes.PostController.listPosts()">View posts</a></li>
+                <li><a href="#">COURSE</a></li>
+                <li><a href="#">STUDENTS</a></li>
+                <li><a href="#">Class</a></li>
+
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="row" id="navv">
+    @content
+    </div>
+
+    <footer id="footer" style="text-align: center">
+      <div id="fotter-text">Copyright &copy; 2015 </div>
+    </footer>
+      <!-- FOOTER SECTION END-->
+      <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+      <!-- CORE JQUERY SCRIPTS -->
+    <script type="text/javascript" src="@routes.Assets.versioned("adminscript/jquery-1.11.1.js") "></script>
+      <!-- BOOTSTRAP SCRIPTS  -->
+    <script type="text/javascript" src="@routes.Assets.versioned("adminscript/bootstrap.js") "></script>
+
+
+    <script type="text/javascript" src="@routes.Assets.versioned("userscript/jasny-bootstrap.js") "></script>
+    <script type="text/javascript" src="@routes.Assets.versioned("userscript/fileinput.js") "></script>
+    <script type="text/javascript" src="@routes.Assets.versioned("userscript/jquery-2.1.4.js") "></script>
+    <script type="text/javascript" src="@routes.Assets.versioned("userscript/bootstrap.js") "></script>
+
+    <script type="text/javascript" src="@routes.Assets.versioned("javascripts/registration.js") "></script>
+
+
+
+
+
+  </body>
+</html>

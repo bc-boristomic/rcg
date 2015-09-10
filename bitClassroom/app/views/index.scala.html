@@ -1,0 +1,15 @@
+@(message: String)
+
+@main("Sign in")("Welcome to bitClassroom") {
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+
+    <div class="text-center">
+        <div id="logo" style="height: 70%">
+            <a href="@routes.UserController.login()"><img src="@routes.Assets.versioned("images/logo.png")" style="width: 50%;max-height: 50%"/></a>
+        </div>
+
+
+        <h1 id="h1"> Welcome to <em>bitClassroom</em></h1>
+    </div>
+
+}

@@ -1,0 +1,50 @@
+@(postList: List[Post])
+
+@mainAdmin("Errors: ") {
+
+
+  <div class="container">
+    <div class="table-responsive">
+      <table id="posts" class="postsT">
+        <thead>
+
+          <tr>
+            <br>
+            <h3>POSTS</h3>
+          </tr>
+          <tr>
+            <br>
+          </tr>
+        </thead>
+
+        <tbody>
+        @for(post <- postList) {
+
+          <div class="">
+            <tr class="info">
+              <h1>_________________________________________________________________________________________</h1>
+
+              <h5>ANNOUNCEMENT  @post.getUser.firstName  @post.getUser.lastName  [@post.getDateTime]</h5>
+              <h3 id="title">Title: @post.getTitle </h3>
+              <hr>
+                <!-- Post Content -->
+              <p class="content" font-size="10px">
+              @post.getContent
+              </p>
+              <hr>
+
+              <h1>_________________________________________________________________________________________</h1>
+
+            </tr>
+          </div>
+
+        }
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+}
+

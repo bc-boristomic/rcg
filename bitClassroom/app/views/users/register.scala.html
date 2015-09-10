@@ -1,0 +1,155 @@
+@(message: String)
+
+@main("Sign out")("Register form") {
+
+       @helper.form(action=routes.UserController.checkAdmin()){
+
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/register.css")">
+
+           <script type="text/javascript" src="@routes.Assets.versioned("javascripts/registration.js") "></script>
+
+        <!--// Div for bitclassroom information, also contains class info for syle with css-->
+        <div class="info"><br>
+
+
+            <div><br><br><br>
+                <h2>How it works</h2><br>
+                <h3>Easy set up</h3>
+
+                <p>Teachers can add students directly or share a code with their class to join. It takes just minutes to set up.</p>
+
+                <h3>Saves time</h3>
+
+                <p>The simple, paperless assignment workflow allows teachers to create, review, and grade assignments quickly, all in one place.</p>
+
+                <h3>Improves organization</h3>
+
+                <p>Students can see all of their assignments on an assignments page, and all class materials are automatically filed into folders            in Google Drive.</p>
+
+                <h3>Enhances communication</h3>
+
+                <p>Classroom allows teachers to send announcements and start class discussions instantly. Students can share resources with each other or provide answers to questions on the stream.</p>
+
+                <h3>Affordable and secure</h3>
+
+                <p>Like the rest of our Google Apps for Education services, Classroom contains no ads, never uses your content or student data for advertising purposes, and is free for schools.</p>
+
+
+            </div>
+
+        </div>
+
+        <!--Div for registration form -->
+        <div class="main">
+
+            <div class="one">
+
+                    <!--Div with class register for set settings and style in css -->
+                <div class="register">
+
+                    <h3>Create your account</h3>
+
+                    <form  action="" id="reg-form">
+                            <!-- Div with class for name fields-->
+                        <div class="name">
+                            <label for="name">Name</label>*
+                            <input name="firstName" type="text" onblur="allLetterCheck(this)" onfocus="allLetterUncheck(this)" id="name" placeholder="First name" required />
+                            <label></label>*
+                            <input  name="lastName" type="text" id="lastName" onblur="allLetterCheck(this)" onfocus="allLetterUncheck(this)" placeholder="Last name"  required/>
+                        </div>
+                            <!--Imput email field-->
+                        <div>
+                            <label for="email">Email</label>*
+                            <input name="email" type="email" id="email" placeholder="&#64bitcamp.ba" required/>
+                        </div>
+                            <!--Input password fields-->
+                        <div>
+                            <label for="password">Password</label>*
+                            <input  name="password" type="password" onblur="pass_validationCheck()" onfocus="pass_validationUncheck()" id="password" required />
+                        </div>
+                            <!--Field password again-->
+                        <div>
+                            <label for="password-again">Repeat password</label>*
+                            <input type="password" onblur="checkRepeatPassCheck()" onfocus="checkRepeatPassUncheck()" id="password-again" required/>
+                        </div>
+
+                            <!--Div for age field with select form with option of day, month and year-->
+
+                        <div>
+
+                            <label> Date of Birth:</label>*
+                            <!--Selecet day-->
+                            <form action="action_page.php">
+                                <input type="date" name="yearOfBirth" max="2012-12-31"required/>
+                            </form>
+
+                        </div>
+
+                            <!--Div for select gender -->
+                        <div>
+                            <label>Gender</label>*
+                            Male <input name="gender" type="radio"  value="Male" required/>
+                            Female <input type="radio" name="gender" value="Female"  required/>
+                        </div>
+
+                            <!--Div for input of Skype name-->
+                        <div>
+                            <label for="skype-name">Skype name</label>
+                            <input name="skypeName" type="text" id="skype-name"  />
+                        </div>
+
+
+                            <!--Div for input of Facebook profil-->
+                        <div>
+                            <label for="skype-name">Facebook profile</label>
+                            <input  name="facebook" type="url" id="skype-name" value="http://"/>
+                        </div>
+
+                            <!--Div for set profile picture-->
+                        <div>
+                            <label for="picture">Profile picture</label>
+                            <input type="text" id="picture" />
+                        </div>
+
+
+                        <div>
+
+                            <form class="upload" action="<?php echo $uploadHandler ?>" enctype="multipart/form-data" method="post">
+
+
+                                <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $max_file_size ?>">
+
+                                <label for="file">Or:</label>
+                                <input id="file" type="file" name="file">
+
+                                <label></label>
+                                <input id="submit" type="submit" name="submit" value="Upload!">
+
+
+                            </form>
+                        </div>
+
+                            <!--Div for accept the terms with checkbox-->
+                        <div class="checkboxy">
+                            <input name="cecky" id="checky" value="1" type="checkbox" required /><label class="terms">
+                            I accept the <a href="https://support.google.com/edu/classroom/answer/6020279?hl=en" target="_blank">
+                            terms</a> of use</label>
+
+                        </div>
+                            <!--Set submit button-->
+                        <div>
+                            <label></label>
+                            <input type="submit" value="Create Account" id="create-account1" class="button"/>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    }
+}
+

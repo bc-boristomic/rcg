@@ -1,0 +1,61 @@
+@(userForm: Form[User])
+
+@mainAdmin("Add new user") {
+
+    @helper.form(action = routes.UserController.saveUser()) {
+        <!-- custom css -->
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/login.css")">
+
+        <!-- custom js -->
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/login.js")"></script>
+
+        <div class="container">
+            <h4 class="page-head-line">Add user:</h4>
+
+        </div>
+
+
+        <div class="add-user" id="center">
+            
+            <br>
+            <p><strong>Add new user to database</strong></p>
+
+            <form action="" method="post">
+                <div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input name="email" type="email" id ="email" value=""  required>
+                    </div>
+
+                    <div>
+                        <label for="password">Psssword</label>
+                        <input  name="password"  id = "password" type="password" value="" required>
+                    </div>
+                    
+                    
+                    <div>
+                        <label >Role</label>
+                        <select id="selection" name="type">
+                            <option value="1">Admin</option>
+                            <option value="2">Teacher</option>
+                            <option value="3">Mentor</option>
+                            <option value="4">Students</option>
+                        </select>
+                        
+                        
+                    </div>
+
+                </div>
+
+                <div>
+                    <input type="submit" value="Add user" onclick="validateLogin(email, password)" href="@routes.UserController.saveUser()" class="button">
+                </div>
+
+            </form>
+        </div>
+
+    }
+}
+
+
+

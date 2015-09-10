@@ -1,0 +1,60 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET           /                              @controllers.Application.index()
+
+# checks user login
+GET           /users/login                   @controllers.UserController.login()
+POST          /users/                        @controllers.UserController.checkLogin()
+
+# logs out user
+GET           /users/logout                  @controllers.UserController.signOut()
+
+# popup email
+GET           /users/email                   @controllers.UserController.sendEmail()
+
+# registers new user
+GET           /users/register                @controllers.UserController.register()
+POST          /users/register                @controllers.UserController.saveUser()
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET           /assets/*file                  controllers.Assets.versioned(path="/public", file: Asset)
+
+
+GET           /users/admin                   @controllers.UserController.checkAdmin()
+
+# get information of users ( admin function )
+GET           /users/admin/list              @controllers.UserController.list()
+GET           /users/admin/errors            @controllers.UserController.allErrors()
+
+# delete users
+DELETE        /users/admin/users:id          @controllers.UserController.deleteUser(id: Long)
+
+DELETE        /users/admin/errors/:id        @controllers.UserController.deleteError(id: Long)
+
+# add new post
+GET           /users/post                    @controllers.PostController.addPost()
+POST          /users/post                    @controllers.PostController.savePost()
+GET           /users/post/list               @controllers.PostController.listPosts()
+
+# user main page and edit user controllers
+GET           /users/mainUser                @controllers.UserController.mainUser()
+GET           /users/editUser                @controllers.UserController.editUser()
+POST          /users/editUser                @controllers.UserController.updateUser()
+
+
+# routes for daily report
+GET           /users/daily                   @controllers.DailyRaportController.dailyRaport()
+GET           /users/saveraport              @controllers.DailyRaportController.saveRaport()
+GET           /users/listraport              @controllers.DailyRaportController.listRaport()
+POST          /users/setraport               @controllers.DailyRaportController.setRaport()
+GET           /users/deleteraport            @controllers.DailyRaportController.deleteRaport()
+GET           /users/raportmodel             @controllers.DailyRaportController.raportModel()
+POST          /users/field                   @controllers.DailyRaportController.saveField()
+
+
+
+

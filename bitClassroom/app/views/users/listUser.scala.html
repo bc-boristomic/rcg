@@ -1,0 +1,46 @@
+@(userList: List[User])
+
+@main ("Sign out") ("Users: ") {
+
+  <h2>   All users</h2>
+
+  <script>
+        function del(urlToDel) {
+            $.ajax({
+                url: urlToDel,
+                type: 'DELETE',
+                success: function(results) {
+                    location.reload();
+                }
+            });
+        }
+    </script>
+
+  <!-- TODO make a better design of table and page -->
+
+
+<div class="table-responsive">
+  <table class="table-condensed table-hover table">
+    <thead>
+      <tr clsss="danger">
+        <th>First name:</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    @for(users <- userList) {
+      <tr class="info">
+        <td>@users.firstName</td>
+        <td>@users.lastName</td>
+        <td>@users.email</td>
+        <td><a onclick="del('@routes.UserController.deleteUser(users.id)')"><i class="glyphicon glyphicon-trash"></i></a></td>
+      </tr>
+    }
+    </tbody>
+  </table>
+
+</div>
+
+}

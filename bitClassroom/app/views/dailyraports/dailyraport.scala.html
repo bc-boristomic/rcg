@@ -1,0 +1,45 @@
+@(raportForm: Form[DailyRaportModel], fieldList: List[FieldModel])
+@import helper._
+@import java.util.List
+
+
+@main(" ")(" ") {
+
+    @helper.form(action = routes.DailyRaportController.dailyRaport()) {
+        <!-- custom css -->
+        <link rel="stylesheets" media="screen" href="@routes.Assets.versioned("bootstrap/css/bootstrap.css")">
+
+
+
+        <div class="form-group">
+            <form class="form-control">
+
+                <input value="" required>
+                <input type="datetime">
+                <div class="form-inline">
+                    @fieldList.map { field =>
+                        @field.name <input name="@field.name" type="text"><br>
+                    }
+
+
+                </div>
+
+                <div class="form-inline">
+                        <!--
+          field input elements
+          -->
+
+
+                </div>
+
+                <div class="form-inline">
+                    <input type="submit" value="Save" onclick="" href="" class="button">
+                </div>
+
+            </form>
+        </div>
+
+    }
+}
+
+
