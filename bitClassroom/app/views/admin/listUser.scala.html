@@ -1,0 +1,70 @@
+@(userList: List[User])
+
+@mainAdmin("Users: ") {
+
+    <script type="text/javascript" src="@routes.Assets.versioned("adminscript/jquery-1.11.1.js") "></script>
+
+  <script>
+        function del(urlToDel) {
+
+            $.ajax({
+
+                url: urlToDel,
+                type: 'DELETE',
+                success: function(results) {
+                    location.reload();
+                }
+            });
+        }
+    </script>
+
+  <!-- TODO make a better design of table and page -->
+
+
+    <div class="container">
+        <h4 class="page-head-line">Users:</h4>
+
+    </div>
+
+
+<div class="container">
+<div class="table-responsive">
+  <table class="table-condensed table-hover table table-bordered">
+    <thead>
+      <tr class="danger">
+        <th>Id:</th>
+        <th>First name:</th>
+        <th>Last name:</th>
+        <th>Email:</th>
+        <th>Role:</th>
+        <th></th>
+
+      </tr>
+    </thead>
+    <tbody>
+    @for(users <- userList) {
+      <tr class="info">
+        <td>@users.id</td>
+        <td>@users.firstName</td>
+        <td>@users.lastName</td>
+        <td>@users.email</td>
+        @if( users.role == 1) {
+            <td>Admin</td>
+        }@if(users.role == 2){
+          <td>Teacher</td>
+        }@if(users.role == 3){
+          <td>Mentor</td>
+        }@if(users.role == 4){
+          <td>Student</td>
+        }
+        <td><a onclick="del('@routes.UserController.deleteUser(users.id)')"><i class="glyphicon glyphicon-trash"></i></a></td>
+      </tr>
+    }
+    </tbody>
+  </table>
+
+</div>
+
+</div>
+
+}

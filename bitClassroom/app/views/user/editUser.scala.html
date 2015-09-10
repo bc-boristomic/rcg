@@ -1,0 +1,98 @@
+@(user: User)
+@import helper._
+
+@mainUser("User")(user.email){
+
+  <div id="wrapper">
+    <form action="@routes.UserController.mainUser()" method="post">
+      <div>
+        <div>
+          <fieldset class="scheduler-border">
+            <legend class="scheduler-border">Change details</legend>
+            <div class="left">
+              <div class="control-group">
+                <label class="control-label input-label" for="name">Name</label>
+                <input name="firstName" type="text" value="@user.firstName" onblur="allLetterCheck(this)" onfocus="allLetterUncheck(this)" id="name" placeholder="First name"/>
+
+                <input  name="lastName" type="text" id="lastName" value="@user.lastName" onblur="allLetterCheck(this)" onfocus="allLetterUncheck(this)" placeholder="Last name"/>
+              </div>
+                <!--Imput email field-->
+              <div class="control-group">
+                <label class="control-label input-label" for="email">Email</label>
+                <input name="email" type="email" id="email" value="@user.email" placeholder="&#64bitcamp.ba" readonly/>
+              </div>
+                <!--Div for age field with select form with option of day, month and year-->
+              <div class="control-group">
+
+                <label class="control-label input-label"> Date of Birth:</label>
+                  <!--Selecet day-->
+                <form action="action_page.php">
+                  <input type="date" name="yearOfBirth" min="1969-12-31" max="1998-12-31"/>
+                </form>
+
+              </div>
+
+                <!--Div for select gender -->
+              <div class="control-group">
+                <label class="control-label input-label">Gender</label>
+                Male <input name="gender" type="radio"  value="Male"/>
+                Female <input type="radio" name="gender" value="Female"/>
+              </div>
+
+                <!--Div for input of Skype name-->
+              <div class="control-group">
+                <label class="control-label input-label" for="skype-name">Skype name</label>
+                <input name="skypeName" type="text" id="skype-name" value="@user.skypeName"/>
+              </div>
+
+
+                <!--Div for input of Facebook profil-->
+              <div class="control-group">
+                <label class="control-label input-label" for="facebook">Facebook profile</label>
+                <input  name="facebook" type="url" id="facebook" value="http://"/>
+              </div>
+            </div>
+            <div class="right">
+
+              <div class="fileinput fileinput-new" data-provides="fileinput">
+                <div class="fileinput-new thumbnail" style="width: 160px; height: 180px; ">
+                  <img data-src="holder.js/100%x100%" alt="...">
+                </div>
+                <div class="fileinput-preview fileinput-exists thumbnail" style="width: 160px; height: 180px"></div>
+                <div>
+                  <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                  <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                </div>
+              </div>
+
+
+            </div>
+
+          </fieldset>
+        </div>
+      </div>
+
+      <fieldset class="scheduler-border">
+        <legend class="scheduler-border">Change password</legend>
+        <div class="control-group">
+            <!--Input password fields-->
+          <div>
+            <label for="password">Password</label>
+            <input  name="password" type="password" onblur="pass_validationCheck()" onfocus="pass_validationUncheck()" id="password" required />
+          </div>
+            <!--Field password again-->
+          <div>
+            <label for="password-again">Confirm password</label>
+            <input type="password" onblur="checkRepeatPassCheck()" onfocus="checkRepeatPassUncheck()" id="password-again" required/>
+          </div>
+        </div>
+
+      </fieldset>
+      <div>
+        <input type="submit" href="@routes.UserController.mainUser()" value="Update Account" />
+      </div>
+    </form>
+  </div>
+
+
+}

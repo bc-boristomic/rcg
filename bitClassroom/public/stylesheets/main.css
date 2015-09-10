@@ -1,0 +1,41 @@
+#header{
+ margin-bottom: -30px;
+}
+* {
+     margin: 0;
+ }
+html, body {
+    height: 100%;
+    background : url("../images/background.jpg") no-repeat center center fixed;
+    -moz-background-size: cover;
+
+    -webkit-background-size: cover;
+
+    -o-background-size: cover;
+
+    background-size: cover;
+}
+.page-wrap {
+    min-height: 89%;
+    /* equal to footer height */
+    margin-top: 52px;
+    margin-bottom: -22px;
+
+}
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+.site-footer, .page-wrap:after {
+    height: 22px;
+    text-align:center;
+}
+
+#h1{
+    text-shadow: 1.5px 1.5px silver;
+    font-family: Shenandoah;
+    color: darkgreen;
+    font-size: 56px;
+    margin-top: 65px;
+
+}

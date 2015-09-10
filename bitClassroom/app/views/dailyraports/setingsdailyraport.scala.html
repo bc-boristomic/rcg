@@ -1,0 +1,18 @@
+@main("Daily Raport")("kgg") {
+
+
+    <!-- custom css -->
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/dailyraport.css")">
+
+    <!-- custom js -->
+    <script type="text/javascript" src="@routes.Assets.versioned("javascripts/dailyraport.js") "></script>
+
+    <form method="post" action="/users/field">
+        <label>Script Name</label>
+        <input id="name" name="name">
+
+        <input type="submit" value="Add"/>
+    </form>
+
+
+}
